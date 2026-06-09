@@ -967,13 +967,7 @@
         <img src="https://raw.githubusercontent.com/tonbra001/Emmanuel-Edoko-portfolio-website/main/images/infographic_rgs_ibg.png"
              alt="NEA Mentoring Partnerships Infographic"
              style="width:100%;border-radius:20px;box-shadow:0 30px 80px rgba(0,0,0,0.18);display:block;position:relative;z-index:1;"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
         />
-        <!-- placeholder shown if image not yet uploaded -->
-        <div style="display:none;width:100%;aspect-ratio:3/4;border-radius:20px;background:var(--off);border:2px dashed var(--border);align-items:center;justify-content:center;flex-direction:column;gap:12px;text-align:center;padding:32px;">
-          <div style="font-size:3rem;">🖼️</div>
-          <div style="font-size:0.85rem;color:var(--muted);font-weight:600;">Upload <strong>nea_infographic.jpg</strong><br/>to your GitHub images folder<br/>to display here</div>
-        </div>
       </div>
 
       <!-- Project details -->
@@ -1028,7 +1022,7 @@
       <h2 class="contact-heading">Let's <em>Connect</em></h2>
       <p class="contact-sub">I am building something meaningful — and I am always open to conversations with people who think big, value trust, and believe marketing should do more than just sell.</p>
       <div class="contact-list">
-        <div class="c-item"><div class="c-ico">📍</div><div><div class="c-lbl">Address</div><div class="c-val">St Johns Halls, St Johns Street<br/>Northampton, NN1 1DH</div></div></div>
+        <div class="c-item"><div class="c-ico">📍</div><div><div class="c-lbl">Location</div><div class="c-val">Northampton, UK</div></div></div>
         <div class="c-item"><div class="c-ico">✉️</div><div><div class="c-lbl">Email</div><div class="c-val"><a href="mailto:emmanuel.edoko25@my.northampton.ac.uk">emmanuel.edoko25@my.northampton.ac.uk</a></div></div></div>
         <div class="c-item"><div class="c-ico">📞</div><div><div class="c-lbl">Phone</div><div class="c-val"><a href="tel:+4407350161256">+44 07350 161 256</a></div></div></div>
         <div class="c-item"><div class="c-ico">🎓</div><div><div class="c-lbl">Institution</div><div class="c-val">University of Northampton · MSc Digital Marketing</div></div></div>
@@ -1083,18 +1077,34 @@
   document.querySelectorAll('.skill-grid').forEach(g => skillObs.observe(g));
 
   // counters
-  const counterObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      e.target.querySelectorAll('.stat-num[data-target]').forEach(el => {
-        const target = parseInt(el.dataset.target);
-        let c = 0;
-        const t = setInterval(() => { c++; el.innerHTML = c + (el.querySelector('sup') ? '<sup>+</sup>' : ''); if (c >= target) clearInterval(t); }, 1200 / target);
-      });
+  function runCounters(bar) {
+    if (bar._counted) return;
+    bar._counted = true;
+    bar.querySelectorAll('.stat-num[data-target]').forEach(el => {
+      const target = parseInt(el.dataset.target);
+      const hasSup = el.innerHTML.includes('<sup>');
+      let c = 0;
+      const steps = Math.max(target, 1);
+      const interval = Math.round(1000 / steps);
+      const t = setInterval(() => {
+        c++;
+        el.innerHTML = c + (hasSup ? '<sup>+</sup>' : '');
+        if (c >= target) clearInterval(t);
+      }, interval);
     });
-  }, { threshold: 0.4 });
+  }
+  const counterObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) runCounters(e.target); });
+  }, { threshold: 0.15 });
   const statsBar = document.querySelector('.stats-bar');
-  if (statsBar) counterObs.observe(statsBar);
+  if (statsBar) {
+    counterObs.observe(statsBar);
+    // fire immediately if already in viewport on load
+    window.addEventListener('load', () => {
+      const r = statsBar.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) runCounters(statsBar);
+    });
+  }
 
   // hero reveal on load
   window.addEventListener('load', () => {
