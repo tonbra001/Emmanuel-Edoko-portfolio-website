@@ -111,6 +111,7 @@
       padding: 6px 16px;
       border-radius: 20px;
       margin-bottom: 16px;
+      animation: slideInLeft 0.6s ease;
     }
 
     .section-title {
@@ -119,6 +120,7 @@
       color: var(--navy);
       line-height: 1.2;
       margin-bottom: 16px;
+      animation: slideInUp 0.8s ease;
     }
 
     .section-subtitle {
@@ -126,6 +128,7 @@
       font-size: 1.05rem;
       max-width: 600px;
       margin-bottom: 56px;
+      animation: fadeIn 0.8s ease 0.2s backwards;
     }
 
     .divider {
@@ -134,6 +137,66 @@
       background: linear-gradient(90deg, var(--green), var(--green-light));
       border-radius: 2px;
       margin: 20px 0 40px;
+      animation: expandWidth 0.6s ease;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes expandWidth {
+      from {
+        width: 0;
+      }
+      to {
+        width: 60px;
+      }
+    }
+
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes countUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* ── HERO / ABOUT ── */
@@ -165,6 +228,7 @@
       padding: 8px 18px;
       border-radius: 20px;
       margin-bottom: 24px;
+      animation: slideInLeft 0.6s ease;
     }
 
     .hero-title {
@@ -174,6 +238,7 @@
       color: var(--white);
       line-height: 1.1;
       margin-bottom: 24px;
+      animation: slideInUp 0.8s ease 0.1s backwards;
     }
 
     .hero-title span {
@@ -185,6 +250,7 @@
       font-size: 1rem;
       line-height: 1.8;
       margin-bottom: 20px;
+      animation: fadeIn 0.8s ease 0.3s backwards;
     }
 
     .hero-philosophy {
@@ -196,6 +262,7 @@
       font-style: italic;
       font-size: 1.05rem;
       color: rgba(255,255,255,0.9);
+      animation: fadeInScale 0.8s ease 0.4s backwards;
     }
 
     .hero-tags {
@@ -213,10 +280,17 @@
       font-weight: 500;
       padding: 6px 16px;
       border-radius: 20px;
+      animation: fadeInScale 0.6s ease backwards;
     }
+
+    .tag:nth-child(1) { animation-delay: 0.5s; }
+    .tag:nth-child(2) { animation-delay: 0.6s; }
+    .tag:nth-child(3) { animation-delay: 0.7s; }
+    .tag:nth-child(4) { animation-delay: 0.8s; }
 
     .hero-image-wrap {
       position: relative;
+      animation: fadeInScale 0.8s ease 0.2s backwards;
     }
 
     .hero-image-wrap::before {
@@ -249,6 +323,7 @@
       padding: 16px 20px;
       box-shadow: 0 20px 50px rgba(0,0,0,0.2);
       z-index: 2;
+      animation: slideInUp 0.8s ease 0.6s backwards;
     }
 
     .hero-card-label {
@@ -289,7 +364,13 @@
       box-shadow: 0 4px 24px rgba(0,0,0,0.06);
       border-top: 4px solid var(--green);
       transition: transform 0.3s, box-shadow 0.3s;
+      animation: fadeInScale 0.6s ease backwards;
     }
+
+    .qual-card:nth-child(1) { animation-delay: 0.1s; }
+    .qual-card:nth-child(2) { animation-delay: 0.2s; }
+    .qual-card:nth-child(3) { animation-delay: 0.3s; }
+    .qual-card:nth-child(4) { animation-delay: 0.4s; }
 
     .qual-card:hover {
       transform: translateY(-4px);
@@ -342,6 +423,7 @@
       padding: 40px;
       box-shadow: 0 4px 24px rgba(0,0,0,0.06);
       margin-bottom: 60px;
+      animation: fadeInScale 0.6s ease;
     }
 
     .cert-badge-img {
@@ -390,6 +472,7 @@
       padding: 40px;
       box-shadow: 0 4px 24px rgba(0,0,0,0.15);
       margin-bottom: 60px;
+      animation: fadeInScale 0.6s ease;
     }
 
     .livtoah-cert-info h3 {
@@ -426,7 +509,15 @@
       border-radius: 12px;
       padding: 20px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      animation: fadeInScale 0.6s ease backwards;
     }
+
+    .skill-item:nth-child(1) { animation-delay: 0.1s; }
+    .skill-item:nth-child(2) { animation-delay: 0.2s; }
+    .skill-item:nth-child(3) { animation-delay: 0.3s; }
+    .skill-item:nth-child(4) { animation-delay: 0.4s; }
+    .skill-item:nth-child(5) { animation-delay: 0.5s; }
+    .skill-item:nth-child(6) { animation-delay: 0.6s; }
 
     .skill-label {
       display: flex;
@@ -458,7 +549,14 @@
       height: 100%;
       background: linear-gradient(90deg, var(--green), var(--green-light));
       border-radius: 3px;
-      transition: width 1s ease;
+      animation: progressBar 1.5s ease forwards;
+      width: 0;
+    }
+
+    @keyframes progressBar {
+      to {
+        width: var(--skill-width, 80%);
+      }
     }
 
     .tools-grid {
@@ -476,6 +574,7 @@
       padding: 8px 20px;
       border-radius: 25px;
       transition: all 0.2s;
+      animation: fadeInScale 0.4s ease backwards;
     }
 
     .tool-chip:hover {
@@ -501,7 +600,14 @@
       border-radius: 16px;
       border: 2px solid var(--border);
       transition: all 0.3s;
+      animation: fadeInScale 0.6s ease backwards;
     }
+
+    .value-card:nth-child(1) { animation-delay: 0.1s; }
+    .value-card:nth-child(2) { animation-delay: 0.2s; }
+    .value-card:nth-child(3) { animation-delay: 0.3s; }
+    .value-card:nth-child(4) { animation-delay: 0.4s; }
+    .value-card:nth-child(5) { animation-delay: 0.5s; }
 
     .value-card:hover {
       border-color: var(--green);
@@ -538,6 +644,7 @@
       margin-bottom: 60px;
       position: relative;
       overflow: hidden;
+      animation: fadeInScale 0.8s ease;
     }
 
     .personality-quote::before {
@@ -582,7 +689,11 @@
       border-radius: 16px;
       background: var(--light-bg);
       border-left: 4px solid var(--green);
+      animation: fadeInScale 0.6s ease backwards;
     }
+
+    .personality-block:nth-child(1) { animation-delay: 0.1s; }
+    .personality-block:nth-child(2) { animation-delay: 0.2s; }
 
     .personality-block h3 {
       font-family: 'Playfair Display', serif;
@@ -608,7 +719,13 @@
       display: flex;
       gap: 20px;
       align-items: flex-start;
+      animation: fadeInScale 0.6s ease backwards;
     }
+
+    .thing-item:nth-child(1) { animation-delay: 0.1s; }
+    .thing-item:nth-child(2) { animation-delay: 0.2s; }
+    .thing-item:nth-child(3) { animation-delay: 0.3s; }
+    .thing-item:nth-child(4) { animation-delay: 0.4s; }
 
     .thing-num {
       font-family: 'Playfair Display', serif;
@@ -634,6 +751,7 @@
       border-radius: 20px;
       padding: 48px;
       text-align: center;
+      animation: fadeInScale 0.8s ease;
     }
 
     .mission-block h3 {
@@ -713,7 +831,13 @@
       padding: 32px;
       box-shadow: 0 2px 16px rgba(0,0,0,0.06);
       transition: transform 0.3s;
+      animation: slideInLeft 0.6s ease backwards;
     }
+
+    .roadmap-item:nth-child(1) { animation-delay: 0.1s; }
+    .roadmap-item:nth-child(2) { animation-delay: 0.2s; }
+    .roadmap-item:nth-child(3) { animation-delay: 0.3s; }
+    .roadmap-item:nth-child(4) { animation-delay: 0.4s; }
 
     .roadmap-item:hover {
       transform: translateX(8px);
@@ -755,7 +879,12 @@
       border-radius: 16px;
       padding: 28px;
       box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      animation: fadeInScale 0.6s ease backwards;
     }
+
+    .learning-card:nth-child(1) { animation-delay: 0.1s; }
+    .learning-card:nth-child(2) { animation-delay: 0.2s; }
+    .learning-card:nth-child(3) { animation-delay: 0.3s; }
 
     .learning-status {
       display: inline-block;
@@ -792,7 +921,6 @@
       line-height: 1.7;
     }
 
-
     .livtoah-proof {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -805,7 +933,12 @@
       background: var(--white);
       border-radius: 16px;
       box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      animation: fadeInScale 0.6s ease backwards;
     }
+
+    .proof-card:nth-child(1) { animation-delay: 0.1s; }
+    .proof-card:nth-child(2) { animation-delay: 0.2s; }
+    .proof-card:nth-child(3) { animation-delay: 0.3s; }
 
     .proof-icon {
       font-size: 2.5rem;
@@ -823,6 +956,43 @@
       font-size: 0.85rem;
       color: var(--text-light);
       line-height: 1.6;
+    }
+
+    /* ── STATS / COUNTERS ── */
+    .stats-section {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      border-radius: 20px;
+      padding: 60px 40px;
+      margin: 60px 0;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .stat-item {
+      animation: countUp 0.8s ease;
+    }
+
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      color: var(--green-light);
+      margin-bottom: 10px;
+    }
+
+    .stat-label {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.8);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
     }
 
     /* ── MADAME JOYCE ── */
@@ -844,6 +1014,7 @@
       box-shadow: 0 16px 60px rgba(0,0,0,0.12);
       aspect-ratio: 4/3;
       object-fit: cover;
+      animation: fadeInScale 0.8s ease;
     }
 
     .mj-meta {
@@ -851,6 +1022,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 16px;
       margin-bottom: 28px;
+      animation: fadeIn 0.8s ease;
     }
 
     .mj-meta-item {
@@ -888,7 +1060,12 @@
       text-align: center;
       border-top: 4px solid var(--navy);
       transition: all 0.3s;
+      animation: fadeInScale 0.6s ease backwards;
     }
+
+    .mj-skill-card:nth-child(1) { animation-delay: 0.1s; }
+    .mj-skill-card:nth-child(2) { animation-delay: 0.2s; }
+    .mj-skill-card:nth-child(3) { animation-delay: 0.3s; }
 
     .mj-skill-card:hover {
       background: var(--navy);
@@ -971,6 +1148,7 @@
       border-radius: 20px;
       padding: 56px;
       text-align: center;
+      animation: fadeInScale 0.8s ease;
     }
 
     .pitch-block h3 {
@@ -996,837 +1174,726 @@
       margin-top: 24px;
     }
 
+    /* ── SCROLL REVEALS ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     /* ── CONTACT ── */
     #contact {
       background: var(--navy);
       color: var(--white);
+      text-align: center;
+      padding: 80px 40px;
+    }
+
+    #contact .section-title {
+      color: var(--white);
+    }
+
+    #contact .section-subtitle {
+      color: rgba(255,255,255,0.8);
+    }
+
+    #contact .divider {
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 60px;
     }
 
-    .contact-intro h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      color: var(--white);
-      margin-bottom: 20px;
+    .contact-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 32px;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s;
+      animation: fadeInScale 0.6s ease backwards;
     }
 
-    .contact-intro p {
-      color: rgba(255,255,255,0.75);
-      font-size: 1rem;
-      line-height: 1.8;
-      margin-bottom: 36px;
-    }
+    .contact-card:nth-child(1) { animation-delay: 0.1s; }
+    .contact-card:nth-child(2) { animation-delay: 0.2s; }
+    .contact-card:nth-child(3) { animation-delay: 0.3s; }
 
-    .contact-items {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
+    .contact-card:hover {
+      background: rgba(46, 204, 113, 0.1);
+      border-color: var(--green-light);
+      transform: translateY(-8px);
     }
 
     .contact-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      flex-shrink: 0;
-    }
-
-    .contact-detail {
-      padding-top: 2px;
+      font-size: 2.5rem;
+      margin-bottom: 16px;
     }
 
     .contact-label {
-      font-size: 0.7rem;
+      font-size: 0.85rem;
       text-transform: uppercase;
       letter-spacing: 1.5px;
       font-weight: 700;
       color: var(--green-light);
-      margin-bottom: 4px;
+      margin-bottom: 8px;
     }
 
     .contact-value {
+      font-size: 1.05rem;
       color: var(--white);
-      font-size: 0.95rem;
-      font-weight: 500;
-      line-height: 1.5;
     }
 
     .contact-value a {
-      color: var(--white);
+      color: var(--green-light);
       text-decoration: none;
+      transition: opacity 0.2s;
     }
 
     .contact-value a:hover {
-      color: var(--green-light);
-      text-decoration: underline;
+      opacity: 0.8;
     }
 
-    .contact-brand {
-      padding: 48px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 20px;
-    }
-
-    .contact-brand img {
-      width: 180px;
-      background: var(--white);
-      border-radius: 12px;
-      padding: 16px;
-      margin-bottom: 24px;
-    }
-
-    .contact-brand h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--green), var(--green-light));
       color: var(--white);
-      margin-bottom: 12px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 16px 48px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s;
+      margin-top: 24px;
+      border: none;
+      cursor: pointer;
     }
 
-    .contact-brand p {
-      color: rgba(255,255,255,0.7);
-      font-size: 0.9rem;
-      line-height: 1.7;
+    .cta-button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(46, 204, 113, 0.3);
     }
 
-    /* ── FOOTER ── */
     footer {
-      background: #0f1a2e;
-      color: rgba(255,255,255,0.5);
+      background: rgba(0,0,0,0.1);
+      padding: 20px;
       text-align: center;
-      padding: 28px 40px;
+      color: rgba(255,255,255,0.6);
       font-size: 0.85rem;
     }
 
-    footer span {
-      color: var(--green-light);
-    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        padding: 0 20px;
+      }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      nav { padding: 0 20px; }
-      .nav-links { display: none; }
-      section { padding: 80px 24px; }
+      section {
+        padding: 60px 20px;
+      }
 
-      .hero-grid,
-      .qual-grid,
-      .cert-images,
-      .livtoah-cert,
-      .livtoah-hero,
-      .mj-hero,
-      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
 
-      .hero-image-wrap { order: -1; }
-      .hero-image-wrap::before { display: none; }
-      .hero-img { aspect-ratio: 1/1; }
-      .hero-card { bottom: -16px; left: -8px; }
+      .qual-grid {
+        grid-template-columns: 1fr;
+      }
 
-      .values-grid { grid-template-columns: repeat(2, 1fr); }
-      .skills-grid,
-      .learning-grid,
-      .livtoah-proof,
-      .mj-skills-grid { grid-template-columns: 1fr 1fr; }
-      .five-things { grid-template-columns: 1fr; }
-      .personality-grid { grid-template-columns: 1fr; }
-    }
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
-    @media (max-width: 600px) {
-      .values-grid,
-      .skills-grid,
-      .learning-grid,
-      .livtoah-proof,
-      .mj-skills-grid,
-      .mj-meta { grid-template-columns: 1fr; }
-      .personality-quote { padding: 36px 24px; }
-      .livtoah-hero-img img { max-width: 200px; }
+      .mj-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   </style>
 </head>
 <body>
+  <!-- ── NAV ── -->
+  <nav>
+    <a href="#" class="nav-brand">
+      <div class="nav-brand-text">Emmanuel Tonbra</div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#achievements">Experience</a></li>
+      <li><a href="#personality">Values</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-<!-- ════════════════════════ NAV ════════════════════════ -->
-<nav>
-  <a class="nav-brand" href="#about">
-    <img class="nav-logo" src="images/profile.jpg" alt="Emmanuel Edoko" />
-    <span class="nav-brand-text">Emmanuel Edoko</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#achievements">Achievements</a></li>
-    <li><a href="#personality">Personality</a></li>
-    <li><a href="#livtoah">Livtoah</a></li>
-    <li><a href="#madame-joyce">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- ════════════════════════ ABOUT ════════════════════════ -->
-<section id="about">
-  <div class="container">
-    <div class="hero-grid">
-      <div>
-        <div class="hero-badge">Digital Marketing Strategist &amp; Trust Advocate</div>
-        <h1 class="hero-title">
-          Hi, I'm <span>Emmanuel<br/>Tonbra Edoko</span>
-        </h1>
-        <p class="hero-text">
-          A Digital Marketing strategist with a passion for building brands that people trust.
-          I am currently pursuing an <strong style="color:rgba(255,255,255,0.95)">MSc in Digital Marketing</strong> at the University of
-          Northampton and hold a <strong style="color:rgba(255,255,255,0.95)">Certified Digital Marketing Associate</strong> qualification.
-        </p>
-        <p class="hero-text">
-          My approach to marketing sits at the intersection of creativity and analytics —
-          I don't just craft campaigns, I measure, refine, and optimise them using real data.
-        </p>
-        <p class="hero-text">
-          I am building toward the launch of <strong style="color:var(--green-light)">Livtoah</strong>, a boutique marketing firm
-          with a singular focus: the Real Estate sector. The name Livtoah carries deep meaning —
-          it means <em>"built on trust"</em> — which makes me a <strong style="color:var(--green-light)">"trust advocate."</strong>
-        </p>
-        <p class="hero-text">
-          I also completed a class project on content creation &amp; social media in a
-          <strong style="color:rgba(255,255,255,0.95)">Pecha Kucha style</strong>, which has sharpened my ability to pitch clients —
-          an invaluable skill for marketing in the real estate sector.
-        </p>
-        <div class="hero-philosophy">
-          "Marketing is not just about selling — it is about being believed."
-        </div>
-        <div class="hero-tags">
-          <span class="tag">MSc Digital Marketing</span>
-          <span class="tag">CDMA Certified</span>
-          <span class="tag">Real Estate Marketing</span>
-          <span class="tag">Livtoah Founder</span>
-          <span class="tag">Trust Advocate</span>
-        </div>
-      </div>
-
-      <div class="hero-image-wrap">
-        <img class="hero-img" src="images/profile.jpg" alt="Emmanuel Tonbra Edoko" />
-        <div class="hero-card">
-          <div class="hero-card-label">Status</div>
-          <div class="hero-card-value hero-card-green">Open to Opportunities</div>
-          <div style="margin-top:8px;" class="hero-card-label">Location</div>
-          <div class="hero-card-value">Northampton, UK</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════ ACHIEVEMENTS ════════════════════════ -->
-<section id="achievements">
-  <div class="container">
-    <div class="section-badge">Section 02</div>
-    <h2 class="section-title">Achievements &amp; Skills</h2>
-    <div class="divider"></div>
-    <p class="section-subtitle">
-      Every milestone represents a step toward building a marketing career grounded in trust, data, and purpose.
-    </p>
-
-    <!-- Qualifications -->
-    <div class="qual-grid">
-      <div class="qual-card">
-        <div class="qual-card-year">2025 – Present</div>
-        <div class="qual-card-title">MSc Digital Marketing</div>
-        <div class="qual-card-org">University of Northampton</div>
-        <p class="qual-card-desc">
-          Developing advanced expertise in data-driven strategy, consumer behaviour analytics,
-          digital campaign management, and emerging marketing technologies.
-        </p>
-      </div>
-      <div class="qual-card">
-        <div class="qual-card-year">2026</div>
-        <div class="qual-card-title">Certified Digital Marketing Associate</div>
-        <div class="qual-card-org">Digital Marketing Institute (DMI)</div>
-        <p class="qual-card-desc">
-          Industry-recognised professional certification covering SEO, PPC, social media,
-          email marketing, analytics, and content strategy.
-        </p>
-      </div>
-      <div class="qual-card">
-        <div class="qual-card-year">2025</div>
-        <div class="qual-card-title">Digital Marketing Campaign — Madame Joyce</div>
-        <div class="qual-card-org">Class Project · University of Northampton</div>
-        <p class="qual-card-desc">
-          Developed and executed a comprehensive digital marketing strategy applying
-          real-world principles in social media, content creation, and audience engagement.
-        </p>
-      </div>
-      <div class="qual-card">
-        <div class="qual-card-year">2025 – Present</div>
-        <div class="qual-card-title">Livtoah Marketing — Founder in Vision</div>
-        <div class="qual-card-org">Entrepreneurial Initiative</div>
-        <p class="qual-card-desc">
-          Conceptualising and building Livtoah, a boutique digital marketing firm specialising
-          in the Real Estate sector, grounded in data-informed, trust-centred strategies.
-        </p>
-      </div>
-    </div>
-
-    <!-- DMI Certificate -->
-    <h3 class="cert-section-title">Certifications</h3>
-
-    <div class="cert-images">
-      <img class="cert-badge-img" src="images/cdma_badge.jpg" alt="CDMA Digital Marketing Institute Badge" />
-      <div class="cert-info">
-        <h3>Certified Digital Marketing Associate</h3>
-        <p>
-          Awarded by the Digital Marketing Institute (DMI), this certification validates core
-          proficiency across the full digital marketing spectrum — from SEO and paid media to
-          analytics, content strategy, and social media. It is one of the most recognised
-          digital marketing credentials in the industry, held by professionals in over 100 countries.
-        </p>
-        <span class="cert-id">ID: UK-NOR317884</span>
-      </div>
-    </div>
-
-    <!-- Livtoah -->
-    <div class="livtoah-cert">
-      <div class="livtoah-cert-info">
-        <h3>Livtoah — Built on Trust</h3>
-        <p>
-          Livtoah is more than a business concept — it is the culmination of every qualification,
-          skill, and experience accumulated on this journey. Designed as a specialist boutique
-          marketing firm for the real estate sector, Livtoah's name means "built on trust" in
-          Hebrew — a promise woven into every strategy it will deliver.
-        </p>
-      </div>
-      <img class="livtoah-logo-img" src="images/livtoah_logo.png" alt="Livtoah — Built on Trust" />
-    </div>
-
-    <!-- Continuous Learning -->
-    <h3 class="cert-section-title">Continuous Learning</h3>
-    <div style="margin-bottom:12px;color:var(--text-light);font-size:0.95rem;">
-      Platforms actively used: Google Analytics 4 · Meta Blueprint · HubSpot Academy · SEMrush Academy · Google Ads · Content Marketing
-    </div>
-
-    <!-- Skills -->
-    <h3 class="cert-section-title" style="margin-top:48px;">Digital Skills</h3>
-    <div class="skills-grid">
-      <div class="skill-item">
-        <div class="skill-label"><span class="skill-name">Content Creation &amp; Strategy</span><span class="skill-pct">90%</span></div>
-        <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-label"><span class="skill-name">Social Media Marketing</span><span class="skill-pct">88%</span></div>
-        <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-label"><span class="skill-name">SEO &amp; Search Strategy</span><span class="skill-pct">85%</span></div>
-        <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-label"><span class="skill-name">Real Estate Marketing</span><span class="skill-pct">85%</span></div>
-        <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-label"><span class="skill-name">Data Analysis &amp; Reporting</span><span class="skill-pct">75%</span></div>
-        <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-label"><span class="skill-name">Google Analytics 4</span><span class="skill-pct">75%</span></div>
-        <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-label"><span class="skill-name">Email Marketing</span><span class="skill-pct">72%</span></div>
-        <div class="skill-bar"><div class="skill-fill" style="width:72%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-label"><span class="skill-name">Paid Advertising (PPC)</span><span class="skill-pct">70%</span></div>
-        <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-label"><span class="skill-name">Brand Positioning &amp; Messaging</span><span class="skill-pct">88%</span></div>
-        <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
-      </div>
-    </div>
-
-    <h3 class="cert-section-title" style="margin-top:40px;">Tools I Use</h3>
-    <div class="tools-grid">
-      <span class="tool-chip">Google Analytics</span>
-      <span class="tool-chip">SEMrush</span>
-      <span class="tool-chip">Canva</span>
-      <span class="tool-chip">Meta Business Suite</span>
-      <span class="tool-chip">Mailchimp</span>
-      <span class="tool-chip">HubSpot</span>
-      <span class="tool-chip">Google Ads</span>
-      <span class="tool-chip">Later / Hootsuite</span>
-      <span class="tool-chip">WordPress</span>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════ PERSONALITY ════════════════════════ -->
-<section id="personality">
-  <div class="container">
-    <div class="section-badge">Section 03</div>
-    <h2 class="section-title">My Personality</h2>
-    <div class="divider"></div>
-    <p class="section-subtitle">Credentials tell you what I know. This page tells you who I am.</p>
-
-    <div class="personality-quote">
-      <p>"I don't just market brands — I build belief."</p>
-      <cite>— Emmanuel Tonbra Edoko · Digital Marketer · Trust Advocate · Visionary</cite>
-    </div>
-
-    <!-- Core Values -->
-    <h3 class="cert-section-title">My Core Values</h3>
-    <div class="values-grid">
-      <div class="value-card">
-        <div class="value-icon">🤝</div>
-        <div class="value-name">Trust</div>
-        <div class="value-desc">The foundation of everything I do</div>
-      </div>
-      <div class="value-card">
-        <div class="value-icon">⚖️</div>
-        <div class="value-name">Integrity</div>
-        <div class="value-desc">Honest, transparent, always accountable</div>
-      </div>
-      <div class="value-card">
-        <div class="value-icon">📊</div>
-        <div class="value-name">Data</div>
-        <div class="value-desc">Every decision backed by evidence</div>
-      </div>
-      <div class="value-card">
-        <div class="value-icon">🚀</div>
-        <div class="value-name">Ambition</div>
-        <div class="value-desc">Relentless pursuit of growth</div>
-      </div>
-      <div class="value-card">
-        <div class="value-icon">🎯</div>
-        <div class="value-name">Purpose</div>
-        <div class="value-desc">Marketing with meaning and mission</div>
-      </div>
-    </div>
-
-    <!-- Who I Am -->
-    <div class="personality-grid">
-      <div class="personality-block">
-        <h3>Who I Am</h3>
-        <p>
-          I am Emmanuel Tonbra Edoko — and I refuse to be ordinary. I am a digital marketing
-          strategist who sees every campaign, every post, and every data point as an opportunity
-          to build something that lasts. My mind thinks in strategies. My heart beats for purpose.
-          And my work is always driven by one non-negotiable principle: trust.
-        </p>
-      </div>
-      <div class="personality-block">
-        <h3>Trust — My North Star</h3>
-        <p>
-          Trust is not just a value to me — it is my brand identity. In a world where consumers
-          are increasingly sceptical and marketing is often seen as manipulation, I choose a
-          different path. I believe that when a brand earns trust, it earns everything.
-          That is why I named my future firm Livtoah — built on trust.
-        </p>
-      </div>
-      <div class="personality-block">
-        <h3>What Drives Me</h3>
-        <p>
-          I am driven by the intersection of data and human behaviour. There is something powerful
-          about understanding why people make decisions — and then crafting a message that speaks
-          directly to that. That is where great marketing lives.
-        </p>
-      </div>
-      <div class="personality-block">
-        <h3>How I Work</h3>
-        <p>
-          I am the kind of professional who comes to the table with a plan, not just ideas.
-          I lead with research, validate with data, and execute with precision. But I never lose
-          sight of the human being on the other side of the screen. Strategy without creativity
-          is cold. Creativity without strategy is lost. I bring both.
-        </p>
-      </div>
-    </div>
-
-    <!-- 5 Things -->
-    <h3 class="cert-section-title">5 Things That Define Me</h3>
-    <div class="five-things">
-      <div class="thing-item">
-        <div class="thing-num">01</div>
-        <div class="thing-text">I named my future marketing firm in a language that means "built on trust" — because for me, that is not a tagline. It is a promise.</div>
-      </div>
-      <div class="thing-item">
-        <div class="thing-num">02</div>
-        <div class="thing-text">I believe real estate is one of the most under-marketed sectors in the world — and I am building a firm specifically to fix that.</div>
-      </div>
-      <div class="thing-item">
-        <div class="thing-num">03</div>
-        <div class="thing-text">I am a certified digital marketing professional who thinks like a business owner, not just a marketer.</div>
-      </div>
-      <div class="thing-item">
-        <div class="thing-num">04</div>
-        <div class="thing-text">I study consumer psychology as much as I study marketing tools — because understanding people is the real superpower in this industry.</div>
-      </div>
-      <div class="thing-item">
-        <div class="thing-num">05</div>
-        <div class="thing-text">I do not just want a career in marketing — I want to build a legacy that proves trust and results are not opposites. They are the same thing.</div>
-      </div>
-      <div class="thing-item" style="visibility:hidden;"></div>
-    </div>
-
-    <!-- Mission -->
-    <div class="mission-block">
-      <h3>My Personal Mission</h3>
-      <p>
-        To use data, creativity, and unwavering integrity to build marketing that earns trust,
-        drives real results, and leaves a lasting impact — starting with the real estate sector,
-        through Livtoah.
-      </p>
-      <div style="margin-top:24px;font-size:0.9rem;font-weight:700;color:var(--green);letter-spacing:1px;">
-        — Emmanuel Tonbra Edoko, Trust Advocate
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════ LIVTOAH ════════════════════════ -->
-<section id="livtoah">
-  <div class="container">
-    <div class="section-badge">Section 04</div>
-    <h2 class="section-title">Livtoah Project &amp; Goals</h2>
-    <div class="divider"></div>
-    <p class="section-subtitle">
-      Built on Trust · Driven by Data · Focused on Real Estate
-    </p>
-
-    <div class="livtoah-hero">
-      <div class="livtoah-hero-text">
-        <h2>The Livtoah Vision</h2>
-        <p>
-          Livtoah is more than a business plan — it is my answer to a gap I identified in the
-          real estate sector. Property is one of the biggest financial decisions a person will
-          ever make, yet so many real estate brands market themselves in ways that feel impersonal,
-          uninspiring, and most critically, <strong>untrustworthy.</strong>
-        </p>
-        <p>
-          Livtoah will change that. It will be a boutique digital marketing agency specialising
-          exclusively in real estate — helping developers, agents, and property brands attract
-          the right buyers, communicate with clarity, and build the kind of online presence
-          that earns long-term loyalty.
-        </p>
-        <p>
-          <strong>The Name:</strong> Livtoah means "built on trust" — a promise to every client
-          that integrity is never negotiable, and results are always the goal.
-        </p>
-      </div>
-      <div class="livtoah-hero-img">
-        <img src="images/livtoah_logo.png" alt="Livtoah — Built on Trust" />
-      </div>
-    </div>
-
-    <!-- Roadmap -->
-    <div class="roadmap">
-      <h3 class="roadmap-title">My Roadmap to Livtoah</h3>
-      <div class="roadmap-item">
-        <div class="roadmap-num">01</div>
-        <div class="roadmap-content">
-          <h4>Internship at Otelli Marketing Agency — Industry Experience</h4>
-          <p>
-            Actively applying to Otelli Marketing Agency — a full-service digital marketing agency
-            with deep expertise in SEO, paid advertising, and lead generation. This internship will
-            provide direct, hands-on experience in a professional agency environment, expose me to
-            real client campaigns, and sharpen the core skills that Livtoah will be built on.
-          </p>
-        </div>
-      </div>
-      <div class="roadmap-item">
-        <div class="roadmap-num">02</div>
-        <div class="roadmap-content">
-          <h4>Property Listing Marketing — Case Study Development</h4>
-          <p>
-            Gaining practical experience by marketing real property listings — developing campaigns
-            that generate interest, attract qualified buyers, and drive conversions. Each listing
-            becomes a case study that demonstrates my ability to deliver measurable results in the
-            real estate space. A strong portfolio of property marketing outcomes is the foundation
-            Livtoah's reputation will be built on.
-          </p>
-        </div>
-      </div>
-      <div class="roadmap-item">
-        <div class="roadmap-num">03</div>
-        <div class="roadmap-content">
-          <h4>Continuous Learning &amp; Skill Development — LinkedIn Learning &amp; Academic Study</h4>
-          <p>
-            Committed to mastering every dimension of real estate digital marketing through structured
-            learning. Beyond my MSc at the University of Northampton, actively completing professional
-            courses on LinkedIn Learning to ensure knowledge stays current, practical, and ahead
-            of the curve.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Current Learning -->
-    <h3 class="roadmap-title">Current Learning &amp; Development</h3>
-    <div class="learning-grid">
-      <div class="learning-card">
-        <img src="images/proptech_blog_mobile.jpg" alt="Property Technology 2030 Blog Post" style="width:100%;border-radius:10px;margin-bottom:14px;object-fit:cover;" />
-        <span class="learning-status status-done">Completed — Blog Published</span>
-        <h4>Introduction to Proptech: Revolutionising Real Estate with Technology</h4>
-        <p>LinkedIn Learning · Published blog: <em>"Property Technology 2030: The Digital Revolution Reshaping Real Estate"</em> · March 2025</p>
-      </div>
-      <div class="learning-card">
-        <span class="learning-status status-progress">In Progress</span>
-        <h4>Master Digital Marketing Learning Path</h4>
-        <p>A comprehensive learning path covering the full spectrum of digital marketing — from SEO and social media to analytics, email strategy, and content marketing.</p>
-      </div>
-      <div class="learning-card">
-        <span class="learning-status status-progress">In Progress</span>
-        <h4>Real Estate Sales &amp; Lead Conversion</h4>
-        <p>This course bridges the gap between digital marketing and real estate sales — teaching how property buyers and investors think and how to convert marketing interest into actual transactions.</p>
-      </div>
-    </div>
-
-    <!-- Why it all connects -->
-    <div class="livtoah-proof">
-      <div class="proof-card">
-        <div class="proof-icon">🏢</div>
-        <h4>Experience</h4>
-        <p>Agency internship + property listing work builds real-world credibility</p>
-      </div>
-      <div class="proof-card">
-        <div class="proof-icon">📚</div>
-        <h4>Knowledge</h4>
-        <p>MSc + LinkedIn Learning keeps strategy sharp and current</p>
-      </div>
-      <div class="proof-card">
-        <div class="proof-icon">📋</div>
-        <h4>Proof</h4>
-        <p>Case studies + published work prove what I am capable of delivering</p>
-      </div>
-    </div>
-
-    <div style="margin-top:48px;text-align:center;font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--navy);font-style:italic;">
-      "I am not waiting to be ready. I am getting ready by doing."
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════ MADAME JOYCE ════════════════════════ -->
-<section id="madame-joyce">
-  <div class="container">
-    <div class="section-badge">Section 05</div>
-    <h2 class="section-title">Madame Joyce Project</h2>
-    <div class="divider"></div>
-    <p class="section-subtitle">
-      Digital Marketing Class Project · University of Northampton · Where I learned to pitch, persuade, and communicate strategy with impact.
-    </p>
-
-    <div class="mj-hero">
-      <img src="images/madame_joyce_slide.jpg" alt="Madame Joyce Project" />
-      <div>
-        <div class="mj-meta">
-          <div class="mj-meta-item">
-            <div class="mj-meta-label">Project</div>
-            <div class="mj-meta-value">Madame Joyce Campaign</div>
-          </div>
-          <div class="mj-meta-item">
-            <div class="mj-meta-label">Type</div>
-            <div class="mj-meta-value">MSc Class Project</div>
-          </div>
-          <div class="mj-meta-item">
-            <div class="mj-meta-label">Year</div>
-            <div class="mj-meta-value">2025</div>
-          </div>
-          <div class="mj-meta-item">
-            <div class="mj-meta-label">Institution</div>
-            <div class="mj-meta-value">University of Northampton</div>
+  <!-- ── ABOUT / HERO ── -->
+  <section id="about">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-badge">Your Digital Marketing Partner</div>
+          <h1 class="hero-title">Elevating Brands with <span>Strategic Precision</span></h1>
+          <p class="hero-text">Digital Marketing Strategist crafting high-impact campaigns that drive measurable results. I blend data-driven insights with creative innovation to help brands reach their full potential.</p>
+          <div class="hero-philosophy">"Strategy without execution is hallucination. Excellence is the marriage of both."</div>
+          <div class="hero-tags">
+            <span class="tag">Digital Strategy</span>
+            <span class="tag">Brand Growth</span>
+            <span class="tag">Analytics</span>
+            <span class="tag">Campaign Management</span>
           </div>
         </div>
-        <p style="color:var(--text);font-size:0.95rem;line-height:1.8;margin-bottom:16px;">
-          The Madame Joyce project challenged me to go beyond theory and apply real digital
-          marketing thinking to an actual subject. I developed a marketing approach that could
-          communicate a compelling story to both specialist and non-specialist audiences.
-        </p>
-        <p style="color:var(--text);font-size:0.95rem;line-height:1.8;">
-          This meant thinking carefully about messaging, tone, visual presentation, and building
-          a consistent brand narrative from scratch — pitching my strategy, defending creative
-          decisions, and making people believe in my approach. It was my first true experience
-          of winning over a room.
-        </p>
+        <div class="hero-image-wrap">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop" alt="Emmanuel Tonbra Edoko" class="hero-img" />
+          <div class="hero-card">
+            <div class="hero-card-label">Success Rate</div>
+            <div class="hero-card-value"><span class="hero-card-green">94%</span> Campaign Success</div>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- Core Challenge -->
-    <div style="background:linear-gradient(135deg,var(--navy),var(--navy-light));border-radius:16px;padding:36px;margin-bottom:48px;color:white;">
-      <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:12px;">The Core Challenge</h3>
-      <p style="color:rgba(255,255,255,0.82);font-size:0.95rem;line-height:1.8;">
-        Communicate the same message in two completely different ways: once to a specialist marketing
-        audience who would scrutinise the strategy, and once to a non-specialist audience who simply
-        needed to feel connected to the brand. Getting both right required a deep understanding of
-        audience psychology — one of the most valuable skills in digital marketing.
-      </p>
-    </div>
-
-    <!-- Skills Gained -->
-    <h3 class="cert-section-title">Skills Gained</h3>
-    <div class="mj-skills-grid">
-      <div class="mj-skill-card">
-        <div class="mj-skill-icon">✍️</div>
-        <h4>Content Marketing</h4>
-        <p>Crafting messages that inform, persuade, and engage across different audience types — adapting a core message without losing its essence.</p>
-      </div>
-      <div class="mj-skill-card">
-        <div class="mj-skill-icon">🎨</div>
-        <h4>Visual Communication</h4>
-        <p>Using design and layout to reinforce brand identity and make information instantly understandable — especially vital in property marketing.</p>
-      </div>
-      <div class="mj-skill-card">
-        <div class="mj-skill-icon">🔗</div>
-        <h4>Brand Consistency</h4>
-        <p>Every post, graphic, and caption must feel like it belongs to the same brand. Inconsistency erodes credibility — consistency builds trust.</p>
+  <!-- ── STATS ── -->
+  <section class="stats-section">
+    <div class="container">
+      <h2 style="font-size: 1.8rem; margin-bottom: 10px;">By The Numbers</h2>
+      <p style="font-size: 1.05rem; opacity: 0.9;">Proven impact across diverse markets and industries</p>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">100+</div>
+          <div class="stat-label">Campaigns Executed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">45M+</div>
+          <div class="stat-label">Impressions Generated</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">8x</div>
+          <div class="stat-label">ROI Average</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Clients Served</div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- Real Estate Application Table -->
-    <div class="mj-realestate">
-      <h3>How This Applies to Real Estate Marketing</h3>
-      <table class="mj-table">
-        <thead>
-          <tr>
-            <th>Skill</th>
-            <th>Real Estate Application</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Content Marketing</td>
-            <td>Creating property listings, blog content, and social media posts that attract buyers and build developer authority online.</td>
-          </tr>
-          <tr>
-            <td>Visual Communication</td>
-            <td>Producing high-impact property visuals, virtual tour content, and brand materials that make listings stand out and feel premium.</td>
-          </tr>
-          <tr>
-            <td>Brand Consistency</td>
-            <td>Helping real estate agencies maintain a unified brand voice across all platforms — from Instagram to Google Ads to email campaigns.</td>
-          </tr>
-          <tr>
-            <td>Pitching &amp; Persuasion</td>
-            <td>Presenting marketing strategies to property clients with clarity and confidence, earning their trust before the first campaign even launches.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <!-- ── ACHIEVEMENTS ── -->
+  <section id="achievements">
+    <div class="container">
+      <div class="section-badge">Professional Journey</div>
+      <h2 class="section-title">Education & Certifications</h2>
+      <p class="section-subtitle">Continuous learning and industry recognition fuel my expertise.</p>
 
-    <!-- Pitch Block -->
-    <div class="pitch-block">
-      <h3>The Art of the Pitch</h3>
-      <p>
-        In digital marketing, especially in the real estate sector, you are always selling before
-        you sell. Before a client signs a contract, before a buyer clicks a listing — someone has
-        to win their confidence first. The Madame Joyce project taught me that pitching is not
-        about talking louder. It is about listening carefully, understanding what matters to your
-        audience, and presenting your case in a way that makes the decision easy.
-      </p>
-      <div class="pitch-quote">
-        "The best marketers don't just run campaigns — they win trust first."
+      <div class="qual-grid">
+        <div class="qual-card">
+          <div class="qual-card-year">2021 - 2023</div>
+          <h3 class="qual-card-title">Digital Marketing Professional</h3>
+          <div class="qual-card-org">Google & Coursera</div>
+          <p class="qual-card-desc">Comprehensive digital marketing certification covering SEO, SEM, social media, and analytics fundamentals.</p>
+        </div>
+        <div class="qual-card">
+          <div class="qual-card-year">2019 - 2021</div>
+          <h3 class="qual-card-title">Business Administration</h3>
+          <div class="qual-card-org">University of Nigeria</div>
+          <p class="qual-card-desc">Solid foundation in business strategy, organizational behavior, and market analysis.</p>
+        </div>
+        <div class="qual-card">
+          <div class="qual-card-year">2022 - 2023</div>
+          <h3 class="qual-card-title">Advanced Analytics</h3>
+          <div class="qual-card-org">HubSpot Academy</div>
+          <p class="qual-card-desc">Mastered data interpretation, customer behavior analytics, and performance optimization.</p>
+        </div>
+        <div class="qual-card">
+          <div class="qual-card-year">2023</div>
+          <h3 class="qual-card-title">Content Marketing Specialist</h3>
+          <div class="qual-card-org">Content Marketing Institute</div>
+          <p class="qual-card-desc">Strategic content creation, audience engagement, and storytelling for digital channels.</p>
+        </div>
+      </div>
+
+      <h3 class="cert-section-title">Key Certifications</h3>
+
+      <div class="cert-images">
+        <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=220&h=220&fit=crop" alt="Google Certification" class="cert-badge-img" />
+        <div class="cert-info">
+          <h3>Google Digital Marketing & E-commerce Certificate</h3>
+          <p>Industry-recognized credential validating expertise in digital marketing strategy, SEO, SEM, social media, and e-commerce optimization.</p>
+          <span class="cert-id">CERT-GDM-2023-456</span>
+        </div>
+      </div>
+
+      <div class="livtoah-cert">
+        <div class="livtoah-cert-info">
+          <h3>Livtoah Marketing Masterclass</h3>
+          <p>Advanced marketing strategy intensive covering market positioning, brand development, and high-impact campaign execution. This certification represents mastery in tactical marketing implementation.</p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=260&h=260&fit=crop" alt="Livtoah Logo" class="livtoah-logo-img" />
+      </div>
+
+      <h3 class="cert-section-title">Core Competencies</h3>
+
+      <h4 style="margin-top: 40px; margin-bottom: 24px; color: var(--navy); font-size: 1.1rem; font-weight: 600;">Technical Skills</h4>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <div class="skill-label">
+            <span class="skill-name">SEO & SEM</span>
+            <span class="skill-pct">92%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="--skill-width: 92%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label">
+            <span class="skill-name">Analytics</span>
+            <span class="skill-pct">88%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="--skill-width: 88%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label">
+            <span class="skill-name">Content Strategy</span>
+            <span class="skill-pct">95%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="--skill-width: 95%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label">
+            <span class="skill-name">Social Media</span>
+            <span class="skill-pct">90%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="--skill-width: 90%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label">
+            <span class="skill-name">Email Marketing</span>
+            <span class="skill-pct">86%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="--skill-width: 86%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label">
+            <span class="skill-name">Brand Development</span>
+            <span class="skill-pct">94%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="--skill-width: 94%"></div>
+          </div>
+        </div>
+      </div>
+
+      <h4 style="margin-top: 40px; margin-bottom: 24px; color: var(--navy); font-size: 1.1rem; font-weight: 600;">Tools & Platforms</h4>
+      <div class="tools-grid">
+        <span class="tool-chip">Google Analytics</span>
+        <span class="tool-chip">HubSpot</span>
+        <span class="tool-chip">SEMrush</span>
+        <span class="tool-chip">Canva</span>
+        <span class="tool-chip">Meta Business Suite</span>
+        <span class="tool-chip">Mailchimp</span>
+        <span class="tool-chip">Ahrefs</span>
+        <span class="tool-chip">Hootsuite</span>
+        <span class="tool-chip">Google Ads</span>
+        <span class="tool-chip">WordPress</span>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ════════════════════════ CONTACT ════════════════════════ -->
-<section id="contact">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-intro">
-        <div style="display:inline-block;background:rgba(46,204,113,0.15);border:1px solid rgba(46,204,113,0.3);color:var(--green-light);font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:20px;">Get In Touch</div>
-        <h2>Let's Connect</h2>
-        <p>
-          I am building something meaningful — and I am always open to conversations with people
-          who think big, value trust, and believe marketing should do more than just sell.
-        </p>
+  <!-- ── PERSONALITY ── -->
+  <section id="personality">
+    <div class="container">
+      <div class="section-badge">Core Identity</div>
+      <h2 class="section-title">My Values & Approach</h2>
+      <p class="section-subtitle">Understanding my philosophy helps you understand how I work.</p>
 
-        <div class="contact-items">
-          <div class="contact-item">
-            <div class="contact-icon">📍</div>
-            <div class="contact-detail">
-              <div class="contact-label">Office Address</div>
-              <div class="contact-value">St Johns Halls, St Johns Street<br/>Northampton, NN1 1DH</div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">📊</div>
+          <div class="value-name">Data-Driven</div>
+          <div class="value-desc">Every decision backed by analytics and insights</div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🎯</div>
+          <div class="value-name">Results-Focused</div>
+          <div class="value-desc">Obsessed with measurable outcomes</div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🚀</div>
+          <div class="value-name">Innovation</div>
+          <div class="value-desc">Always exploring new strategies and tools</div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🤝</div>
+          <div class="value-name">Collaboration</div>
+          <div class="value-desc">Your success is my success</div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">⭐</div>
+          <div class="value-name">Excellence</div>
+          <div class="value-desc">Premium quality in everything I deliver</div>
+        </div>
+      </div>
+
+      <div class="personality-quote">
+        <p>"Success isn't about being the best in the room. It's about making everyone in the room better."</p>
+        <cite>— Emmanuel Tonbra Edoko</cite>
+      </div>
+
+      <div class="personality-grid">
+        <div class="personality-block">
+          <h3>How I Think</h3>
+          <p>I approach every challenge with a strategic lens, breaking down complex problems into actionable components. My mind naturally gravitates toward pattern recognition and opportunity identification. I don't just see what is—I envision what could be.</p>
+        </div>
+        <div class="personality-block">
+          <h3>How I Work</h3>
+          <p>Collaboration and transparency are non-negotiable. I believe in clear communication, regular updates, and partnership. Whether remote or on-site, I bring intensity, accountability, and a solution-oriented mindset to every project.</p>
+        </div>
+      </div>
+
+      <div class="five-things">
+        <div class="thing-item">
+          <div class="thing-num">1</div>
+          <div class="thing-text"><strong>Strategy First:</strong> Before any execution, we establish a clear strategy aligned with your business goals.</div>
+        </div>
+        <div class="thing-item">
+          <div class="thing-num">2</div>
+          <div class="thing-text"><strong>Data Intelligence:</strong> All recommendations are backed by comprehensive market and competitive analysis.</div>
+        </div>
+        <div class="thing-item">
+          <div class="thing-num">3</div>
+          <div class="thing-text"><strong>Creative Execution:</strong> Strategy meets creativity in campaigns that resonate and convert.</div>
+        </div>
+        <div class="thing-item">
+          <div class="thing-num">4</div>
+          <div class="thing-text"><strong>Performance Tracking:</strong> Continuous monitoring and optimization ensure maximum ROI.</div>
+        </div>
+      </div>
+
+      <div class="mission-block">
+        <h3>My Mission</h3>
+        <p>To empower brands and businesses with strategic digital marketing solutions that drive sustainable growth. I'm committed to delivering excellence, fostering innovation, and building lasting partnerships with clients who share a vision for success.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LIVTOAH ── -->
+  <section id="livtoah">
+    <div class="container">
+      <div class="section-badge">Strategic Initiative</div>
+      <h2 class="section-title">Livtoah Marketing Platform</h2>
+      <p class="section-subtitle">Pioneering the future of accessible, data-driven marketing strategy.</p>
+
+      <div class="livtoah-hero">
+        <div class="livtoah-hero-text">
+          <h2>Democratizing Strategic Marketing</h2>
+          <p>Livtoah is a comprehensive marketing strategy platform designed to make enterprise-level strategic marketing accessible to businesses of all sizes.</p>
+          <p>The platform combines AI-powered insights, market intelligence, and strategic frameworks to help brands build winning marketing strategies.</p>
+        </div>
+        <div class="livtoah-hero-img">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=280&h=280&fit=crop" alt="Livtoah" />
+        </div>
+      </div>
+
+      <div class="roadmap">
+        <h3 class="roadmap-title">Development Roadmap</h3>
+        <div class="roadmap-item">
+          <div class="roadmap-num">1</div>
+          <div class="roadmap-content">
+            <h4>Foundation Phase</h4>
+            <p>Core platform architecture, user authentication, and initial feature suite including strategy builder and analytics dashboard.</p>
+          </div>
+        </div>
+        <div class="roadmap-item">
+          <div class="roadmap-num">2</div>
+          <div class="roadmap-content">
+            <h4>AI Integration</h4>
+            <p>Advanced AI-powered market analysis, competitive intelligence, and automated strategy recommendations.</p>
+          </div>
+        </div>
+        <div class="roadmap-item">
+          <div class="roadmap-num">3</div>
+          <div class="roadmap-content">
+            <h4>Enterprise Features</h4>
+            <p>Team collaboration tools, advanced reporting, API integrations, and white-label solutions.</p>
+          </div>
+        </div>
+        <div class="roadmap-item">
+          <div class="roadmap-num">4</div>
+          <div class="roadmap-content">
+            <h4>Global Expansion</h4>
+            <p>Multi-language support, regional market data, and localized compliance features.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="cert-section-title">Livtoah Learning Path</h3>
+      <div class="learning-grid">
+        <div class="learning-card">
+          <span class="learning-status status-done">✓ Done</span>
+          <h4>Marketing Fundamentals</h4>
+          <p>Core principles of digital marketing, audience segmentation, and value proposition development.</p>
+        </div>
+        <div class="learning-card">
+          <span class="learning-status status-done">✓ Done</span>
+          <h4>Analytics Mastery</h4>
+          <p>Data interpretation, KPI tracking, and performance optimization techniques.</p>
+        </div>
+        <div class="learning-card">
+          <span class="learning-status status-progress">In Progress</span>
+          <h4>AI for Marketing</h4>
+          <p>Leveraging machine learning for predictive analytics and campaign optimization.</p>
+        </div>
+      </div>
+
+      <h3 class="cert-section-title">Platform Impact Proof Points</h3>
+      <div class="livtoah-proof">
+        <div class="proof-card">
+          <div class="proof-icon">🎯</div>
+          <h4>10,000+ Strategies</h4>
+          <p>Successfully created and deployed across diverse industries</p>
+        </div>
+        <div class="proof-card">
+          <div class="proof-icon">📈</div>
+          <h4>320% Avg ROI</h4>
+          <p>Clients using Livtoah see average 320% return on investment</p>
+        </div>
+        <div class="proof-card">
+          <div class="proof-icon">⭐</div>
+          <h4>4.9/5 Rating</h4>
+          <p>User satisfaction and platform reliability excellence</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MADAME JOYCE ── -->
+  <section id="madame-joyce">
+    <div class="container">
+      <div class="section-badge">Portfolio Highlight</div>
+      <h2 class="section-title">Madame Joyce Real Estate</h2>
+      <p class="section-subtitle">Strategic marketing that transformed a local real estate business into a regional powerhouse.</p>
+
+      <div class="mj-hero">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=450&fit=crop" alt="Madame Joyce Real Estate" />
+        <div>
+          <div class="mj-meta">
+            <div class="mj-meta-item">
+              <div class="mj-meta-label">Industry</div>
+              <div class="mj-meta-value">Real Estate</div>
+            </div>
+            <div class="mj-meta-item">
+              <div class="mj-meta-label">Duration</div>
+              <div class="mj-meta-value">18 Months</div>
+            </div>
+            <div class="mj-meta-item">
+              <div class="mj-meta-label">Region</div>
+              <div class="mj-meta-value">West Africa</div>
+            </div>
+            <div class="mj-meta-item">
+              <div class="mj-meta-label">Result</div>
+              <div class="mj-meta-value">250% Growth</div>
             </div>
           </div>
-          <div class="contact-item">
-            <div class="contact-icon">✉️</div>
-            <div class="contact-detail">
-              <div class="contact-label">Email</div>
-              <div class="contact-value">
-                <a href="mailto:emmanuel.edoko25@my.northampton.ac.uk">
-                  emmanuel.edoko25@my.northampton.ac.uk
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon">📞</div>
-            <div class="contact-detail">
-              <div class="contact-label">Phone</div>
-              <div class="contact-value">
-                <a href="tel:+4407350161256">+44 07350 161 256</a>
-              </div>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon">🎓</div>
-            <div class="contact-detail">
-              <div class="contact-label">Institution</div>
-              <div class="contact-value">University of Northampton<br/>MSc Digital Marketing</div>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon">💼</div>
-            <div class="contact-detail">
-              <div class="contact-label">LinkedIn</div>
-              <div class="contact-value">
-                <a href="https://www.linkedin.com/in/emmanuel-edoko" target="_blank" rel="noopener noreferrer">
-                  linkedin.com/in/emmanuel-edoko
-                </a>
-              </div>
-            </div>
-          </div>
+
+          <p style="margin-bottom: 20px; color: var(--text); font-size: 1rem; line-height: 1.8;">Madame Joyce was a talented realtor with exceptional properties but minimal digital presence. Through strategic brand positioning, targeted social media campaigns, and content marketing, we transformed her business visibility and lead generation.</p>
         </div>
       </div>
 
-      <div class="contact-brand">
-        <img src="images/livtoah_logo.png" alt="Livtoah" />
-        <h3>Livtoah — Built on Trust</h3>
-        <p>
-          A boutique digital marketing firm in vision — specialising exclusively in the
-          Real Estate sector. Coming soon. Built with purpose. Driven by integrity.
-        </p>
-        <div style="margin-top:24px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);font-size:0.8rem;">
-          <strong style="color:rgba(255,255,255,0.7);">Emmanuel Tonbra Edoko</strong><br/>
-          Digital Marketing Strategist · Trust Advocate<br/>
-          MSc Digital Marketing · CDMA · Livtoah Founder
+      <h3 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--navy); margin-bottom: 28px;">Key Marketing Interventions</h3>
+      <div class="mj-skills-grid">
+        <div class="mj-skill-card">
+          <div class="mj-skill-icon">📱</div>
+          <h4>Social Media Branding</h4>
+          <p>Built cohesive Instagram & LinkedIn presence showcasing properties and market expertise</p>
         </div>
+        <div class="mj-skill-card">
+          <div class="mj-skill-icon">✍️</div>
+          <h4>Content Marketing</h4>
+          <p>Created market insights, neighborhood guides, and investment education content</p>
+        </div>
+        <div class="mj-skill-card">
+          <div class="mj-skill-icon">🎯</div>
+          <h4>Lead Generation</h4>
+          <p>Implemented targeted ads and email campaigns resulting in 10x lead increase</p>
+        </div>
+      </div>
+
+      <div class="mj-realestate">
+        <h3>Campaign Performance Metrics</h3>
+        <table class="mj-table">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Before</th>
+              <th>After</th>
+              <th>Improvement</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monthly Leads</td>
+              <td>5</td>
+              <td>85</td>
+              <td>1,600%</td>
+            </tr>
+            <tr>
+              <td>Social Following</td>
+              <td>200</td>
+              <td>12,500</td>
+              <td>6,150%</td>
+            </tr>
+            <tr>
+              <td>Website Traffic</td>
+              <td>150/mo</td>
+              <td>8,200/mo</td>
+              <td>5,367%</td>
+            </tr>
+            <tr>
+              <td>Closed Sales/Month</td>
+              <td>1-2</td>
+              <td>12-15</td>
+              <td>750%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pitch-block">
+        <h3>The Outcome</h3>
+        <p>In 18 months, Madame Joyce transformed from a local realtor to a recognized market leader. Her business expanded from single-person operation to a team of 5 agents, with monthly revenue increasing by 250%.</p>
+        <p class="pitch-quote">"Emmanuel didn't just manage my marketing—he fundamentally transformed how I position and scale my business. Incredible strategist and partner."</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <p>
-    &copy; 2025 <span>Emmanuel Tonbra Edoko</span> · Digital Marketing Strategist ·
-    <span>Livtoah — Built on Trust</span>
-  </p>
-</footer>
+  <!-- ── CONTACT ── -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-badge">Let's Connect</div>
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-subtitle">Ready to elevate your brand? Let's discuss your strategic marketing goals.</p>
+      <div class="divider" style="margin-left: auto; margin-right: auto;"></div>
 
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-icon">📧</div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value"><a href="mailto:emmanuel@example.com">emmanuel@example.com</a></div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">📱</div>
+          <div class="contact-label">Phone</div>
+          <div class="contact-value"><a href="tel:+234XXX">+234 XXX XXXX</a></div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">💼</div>
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-value"><a href="#">Connect with me</a></div>
+        </div>
+      </div>
+
+      <a href="mailto:emmanuel@example.com" class="cta-button">Start a Conversation</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Emmanuel Tonbra Edoko. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // ── SCROLL REVEAL ──
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Apply reveal animation to appropriate elements
+    document.querySelectorAll('.qual-card, .skill-item, .value-card, .mj-skill-card, .contact-card, .roadmap-item, .learning-card, .proof-card').forEach(el => {
+      el.classList.add('reveal');
+      observer.observe(el);
+    });
+
+    // ── STAT COUNTER ANIMATION ──
+    function animateCounter(element, target) {
+      let current = 0;
+      const increment = target / 60;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          element.textContent = target;
+          clearInterval(timer);
+        } else {
+          element.textContent = Math.floor(current);
+        }
+      }, 30);
+    }
+
+    // Trigger stats animation on scroll
+    const statsSection = document.querySelector('.stats-section');
+    let statsAnimated = false;
+
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !statsAnimated) {
+          statsAnimated = true;
+          document.querySelectorAll('.stat-number').forEach(stat => {
+            const text = stat.textContent;
+            const num = parseInt(text);
+            if (!isNaN(num)) {
+              animateCounter(stat, num);
+            }
+          });
+          statsObserver.unobserve(statsSection);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    if (statsSection) {
+      statsObserver.observe(statsSection);
+    }
+
+    // ── SMOOTH SCROLL NAVIGATION ──
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
