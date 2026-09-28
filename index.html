@@ -615,6 +615,9 @@
     .rv-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 22px; }
     .rv-tools-label { width: 100%; font-size: 0.68rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); }
     .rv-tools span { font-size: 0.82rem; font-weight: 700; padding: 8px 20px; border-radius: 30px; }
+    .rv-card-email { grid-template-columns: 1.1fr 1fr; }
+    .rv-email-frame { max-height: 560px; overflow-y: auto; border-radius: 16px; background: #fff; box-shadow: 0 30px 80px rgba(0,0,0,0.35); }
+    .rv-email-frame img { width: 100%; display: block; }
     .rv-video { width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: #000; box-shadow: 0 30px 80px rgba(0,0,0,0.35); display: block; }
 
     /* ── SLIME KICKS ROLE ── */
@@ -643,7 +646,8 @@
       .hero-inner { padding: 60px 24px; }
       .sk-card { grid-template-columns: 1fr; gap: 28px; padding: 32px 24px; justify-items: start; }
       .sk-logo { width: 160px; height: 160px; }
-      .rv-card { grid-template-columns: 1fr; gap: 28px; padding: 32px 24px; }
+      .rv-card, .rv-card-email { grid-template-columns: 1fr; gap: 28px; padding: 32px 24px; }
+      .rv-email-frame { max-height: 420px; }
       .section { padding: 80px 24px; }
       #contact { padding: 80px 24px; }
     }
@@ -1078,6 +1082,25 @@
         <source src="images/rgs_ibg_project.mp4" type="video/mp4" />
         Your browser does not support embedded video.
       </video>
+    </div>
+
+    <!-- RGS-IBG Email Newsletter Template -->
+    <div class="rv-card rv-card-email reveal">
+      <div class="rv-email-frame">
+        <img src="images/rgs_ibg_email_template.png" alt="RGS-IBG × University of Northampton email newsletter template" loading="lazy" />
+      </div>
+      <div class="rv-text">
+        <div class="rv-label">RGS-IBG Project · Email Newsletter</div>
+        <h3>A Branded <em>Email Template</em></h3>
+        <p>An email newsletter template for sending project updates to school partners, mentors and stakeholders. It uses the University of Northampton blue alongside RGS green and gold, with sections for project highlights, impact numbers, quotes from participants and upcoming events.</p>
+        <p>Built at the standard 600px email width so it could be pasted into Mailchimp or a similar platform.</p>
+        <p class="rv-note">Created for the project as a concept piece. It was not used in the final output. Scroll the preview to see the full template.</p>
+        <div class="sk-tags">
+          <span>Email Design</span>
+          <span>Brand Identity</span>
+          <span>Stakeholder Communication</span>
+        </div>
+      </div>
     </div>
 
     <!-- Slime Kicks Role -->
