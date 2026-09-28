@@ -612,6 +612,9 @@
     .rv-card h3 em { color: #e8590c; }
     .rv-text p { font-size: 0.93rem; color: rgba(255,255,255,0.65); line-height: 1.8; margin-bottom: 16px; }
     .rv-text .rv-note { font-size: 0.82rem; font-style: italic; color: rgba(255,255,255,0.45); border-left: 3px solid #e8590c; padding-left: 12px; margin-bottom: 22px; }
+    .rv-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 22px; }
+    .rv-tools-label { width: 100%; font-size: 0.68rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+    .rv-tools span { font-size: 0.82rem; font-weight: 700; padding: 8px 20px; border-radius: 30px; }
     .rv-video { width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: #000; box-shadow: 0 30px 80px rgba(0,0,0,0.35); display: block; }
 
     /* ── SLIME KICKS ROLE ── */
@@ -1063,6 +1066,11 @@
           <span>Video Editing</span>
           <span>Motion Captions</span>
           <span>Visual Storytelling</span>
+        </div>
+        <div class="rv-tools">
+          <div class="rv-tools-label">Tools Used</div>
+          <span style="background:rgba(0,201,122,0.15);border:1px solid rgba(0,201,122,0.3);color:var(--green2);">Canva</span>
+          <span style="background:rgba(245,166,35,0.15);border:1px solid rgba(245,166,35,0.3);color:#f5a623;">CapCut</span>
         </div>
       </div>
       <video class="rv-video" controls playsinline preload="metadata" poster="images/rgs_ibg_video_poster.jpg">
