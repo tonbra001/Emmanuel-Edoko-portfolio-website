@@ -605,6 +605,15 @@
     }
     footer span { color: var(--green2); }
 
+    /* ── RGS-IBG CONCEPT VIDEO ── */
+    .rv-card { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; align-items: center; background: var(--navy); border-radius: 24px; padding: 44px 48px; margin-bottom: 56px; }
+    .rv-label { font-size: 0.7rem; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: #e8590c; margin-bottom: 10px; }
+    .rv-card h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--white); margin-bottom: 14px; line-height: 1.2; }
+    .rv-card h3 em { color: #e8590c; }
+    .rv-text p { font-size: 0.93rem; color: rgba(255,255,255,0.65); line-height: 1.8; margin-bottom: 16px; }
+    .rv-text .rv-note { font-size: 0.82rem; font-style: italic; color: rgba(255,255,255,0.45); border-left: 3px solid #e8590c; padding-left: 12px; margin-bottom: 22px; }
+    .rv-video { width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: #000; box-shadow: 0 30px 80px rgba(0,0,0,0.35); display: block; }
+
     /* ── SLIME KICKS ROLE ── */
     .sk-card { display: grid; grid-template-columns: 220px 1fr; gap: 48px; align-items: center; background: var(--off); border: 2px solid var(--border); border-radius: 24px; padding: 44px 48px; margin-bottom: 56px; }
     .sk-logo { width: 220px; height: 220px; border-radius: 50%; overflow: hidden; background: #fff; box-shadow: 0 20px 60px rgba(0,0,0,0.12); }
@@ -631,6 +640,7 @@
       .hero-inner { padding: 60px 24px; }
       .sk-card { grid-template-columns: 1fr; gap: 28px; padding: 32px 24px; justify-items: start; }
       .sk-logo { width: 160px; height: 160px; }
+      .rv-card { grid-template-columns: 1fr; gap: 28px; padding: 32px 24px; }
       .section { padding: 80px 24px; }
       #contact { padding: 80px 24px; }
     }
@@ -1040,6 +1050,25 @@
           <span style="background:var(--off);border:2px solid var(--border);color:var(--text);font-size:0.8rem;font-weight:700;padding:7px 16px;border-radius:20px;">Data Visualisation</span>
         </div>
       </div>
+    </div>
+
+    <!-- RGS-IBG Concept Video -->
+    <div class="rv-card reveal">
+      <div class="rv-text">
+        <div class="rv-label">RGS-IBG Project · Concept Video</div>
+        <h3>A Short Film for the <em>Mentoring Idea</em></h3>
+        <p>Alongside the infographic, I created this 23-second promotional video for the project. It uses watercolour-style scenes, moving from landscapes to university buildings, with bold animated captions about partnership programmes between universities and schools.</p>
+        <p class="rv-note">Created for the project as a concept piece. It was not used in the final output.</p>
+        <div class="sk-tags">
+          <span>Video Editing</span>
+          <span>Motion Captions</span>
+          <span>Visual Storytelling</span>
+        </div>
+      </div>
+      <video class="rv-video" controls playsinline preload="metadata" poster="images/rgs_ibg_video_poster.jpg">
+        <source src="images/rgs_ibg_project.mp4" type="video/mp4" />
+        Your browser does not support embedded video.
+      </video>
     </div>
 
     <!-- Slime Kicks Role -->
